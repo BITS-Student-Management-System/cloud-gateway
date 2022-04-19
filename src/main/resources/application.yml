@@ -3,19 +3,19 @@ server:
 
 spring:
   application:
-    name: API-GATEWAY
+    name: cloud-gateway
   cloud:
     gateway:
       routes:
-        - id: STDUENT-SERVICE
-          uri: lb://STUDENT-SERVICE
+        - id: student-service
+          uri: lb://student-service
           predicates:
             - Path=/students/**
-        - id: DEPARTMENT-SERVICE
-          uri: lb://DEPARTMENT-SERVICE
+        - id: department-service
+          uri: lb://department-service
           predicates:
              - Path=/departments/**
-        - id: COURSE-SERVICE
-          uri: lb://COURSE-SERVICE
+        - id: course-service
+          uri: lb://course-service
           predicates:
              - Path=/courses/**
